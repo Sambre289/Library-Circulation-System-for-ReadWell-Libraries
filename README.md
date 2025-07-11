@@ -12,10 +12,12 @@ Jupyter Notebook – development & testing environment
 
 Stepwise Implementation :
 [1] — Importing Required Libraries:
+
 import pandas as pd
 from datetime import datetime
 
 [2] — Book List Initialization:
+
 book_list = [
     ("1984", "George Orwell", "available"),
     ("To Kill a Mockingbird", "Harper Lee", "available"),
@@ -25,6 +27,7 @@ book_list = [
 
 
 [3] — add_book() Function:
+
 def add_book(title, author):
     title_lower = title.lower()
     if title_lower in book_titles:
@@ -37,6 +40,7 @@ def add_book(title, author):
 
 
 [4] — view_available_books() Function:
+
 def view_available_books():
     df = pd.DataFrame(book_list, columns=["Title", "Author", "Status"])
     available_books = df[df["Status"] == "available"]
@@ -46,6 +50,7 @@ def view_available_books():
 
 
 [5] — update_status() Function:
+
 def update_status(title, action):
     global book_list
     updated = False
@@ -67,7 +72,8 @@ def update_status(title, action):
   <img width="878" height="450" alt="image" src="https://github.com/user-attachments/assets/be82e403-6a9c-4684-bcfa-e6f2fe19761f" />
 
 
-[6] — export_loan_report() Function
+[6] — export_loan_report() Function:
+
 def export_loan_report():
     df = pd.DataFrame(book_list, columns=["Title", "Author", "Status"])
     filename = "loan_report.csv"  # Fixed filename
@@ -76,15 +82,11 @@ def export_loan_report():
 <img width="882" height="132" alt="image" src="https://github.com/user-attachments/assets/bc08244f-6dd3-49e3-aab7-6f3c1ae922de" />
 
 [7] — load_books_from_csv() Function:
+
 def load_books_from_csv(filename="loan_report.csv"):
     df = pd.read_csv(filename)
     return list(df.itertuples(index=False, name=None))
 <img width="885" height="91" alt="image" src="https://github.com/user-attachments/assets/f971bb0f-065b-4c3e-884a-dca1aee15363" />
-
-[7] — load_books_from_csv() Function:
-def load_books_from_csv(filename="loan_report.csv"):
-    df = pd.read_csv(filename)
-    return list(df.itertuples(index=False, name=None))
 
 App.py :
 import streamlit as st
