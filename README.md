@@ -23,6 +23,7 @@ book_list = [
     ("To Kill a Mockingbird", "Harper Lee", "available"),
     ("The Great Gatsby", "F. Scott Fitzgerald", "borrowed")
 ]
+
 <img width="885" height="225" alt="image" src="https://github.com/user-attachments/assets/2b9fb857-ee29-49c2-a075-da62f3bfdca9" />
 
 
